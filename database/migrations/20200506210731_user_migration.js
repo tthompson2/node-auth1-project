@@ -1,4 +1,3 @@
-
 exports.up = function(knex) {
   return knex.schema.createTable('users', users => {
  
@@ -10,13 +9,12 @@ exports.up = function(knex) {
     .unique();
     users.string('password', 128).notNullable();
         
-
   }) 
 
 
 };
 
-exports.down = function(knex) {
+exports.down = function(knex, Promise) {
   
     return knex.schema.dropTableIfExists('users');
 };
